@@ -1,9 +1,9 @@
 # portfolio
 
-endereçamento ip
-diferença de dominio de ip
--ddns
-calculo netmask
+endereçamento ip/
+diferença de dominio de ip/
+-ddns/
+calculo netmask/
 
 
 

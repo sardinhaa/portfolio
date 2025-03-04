@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfólio</title>
+    <link rel="stylesheet" href="styles.css">
+    <script defer src="script.js"></script>
+</head>
+<body>
+    <header>
+        <h1>Meu Portfólio</h1>
+        <button id="toggle-theme">🌙</button>
+    </header>
+    <nav>
+        <ul>
+            <li><a href="#about">Sobre</a></li>
+            <li><a href="#projects">Projetos</a></li>
+            <li><a href="#contact">Contato</a></li>
+        </ul>
+    </nav>
+    <section id="about">
+        <h2>Sobre Mim</h2>
+        <p>Descrição breve sobre você.</p>
+    </section>
+    <section id="projects">
+        <h2>Projetos</h2>
+        <div class="project">
+            <h3>Projeto 1</h3>
+            <p>Descrição do projeto.</p>
+        </div>
+    </section>
+    <section id="contact">
+        <h2>Contato</h2>
+        <div class="social-links">
+            <a href="mailto:goncalorp1@gmail.com" target="_blank">
+                <img src="gmail.png" alt="Gmail"> goncalorp1@gmail.com
+            </a>
+            <a href="https://github.com/sardinhaa" target="_blank">
+                <img src="github.png" alt="GitHub"> @sardinhaa
+            </a>
+            <a href="https://instagram.com/sardinha_yk" target="_blank">
+                <img src="instagram.png" alt="Instagram"> @sardinha_yk
+            </a>
+        </div>
+    </section>
+    
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Fira+Mono&display=swap');
+        
+        body {
+            background-color: #121212;
+            color: #ffffff;
+            font-family: 'Fira Mono', monospace;
+            transition: background 0.3s, color 0.3s;
+        }
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px;
+            background: #1e1e1e;
+        }
+        nav ul {
+            list-style: none;
+            display: flex;
+            gap: 15px;
+        }
+        nav a {
+            color: #ffffff;
+            text-decoration: none;
+        }
+        button {
+            background: none;
+            border: none;
+            color: #ffffff;
+            font-size: 18px;
+            cursor: pointer;
+        }
+        section {
+            margin: 20px;
+            padding: 20px;
+            background: #1e1e1e;
+            border-radius: 10px;
+        }
+        .social-links {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            margin-bottom: 20px;
+        }
+        .social-links a {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            color: #ffffff;
+            text-decoration: none;
+        }
+        .social-links img {
+            width: 32px;
+            height: 32px;
+        }
+
+        /* Light theme styles */
+        body.light-mode {
+            background-color: #ffffff;
+            color: #000000;
+        }
+        header.light-mode {
+            background: #f0f0f0;
+        }
+        section.light-mode {
+            background: #e0e0e0;
+        }
+        nav a.light-mode {
+            color: #000000;
+        }
+        button.light-mode {
+            color: #000000;
+        }
+    </style>
+    
+    <script>
+        document.getElementById('toggle-theme').addEventListener('click', () => {
+            document.body.classList.toggle('light-mode');
+            document.querySelector('header').classList.toggle('light-mode');
+            document.querySelectorAll('section').forEach(section => {
+                section.classList.toggle('light-mode');
+            });
+            document.querySelectorAll('nav a').forEach(link => {
+                link.classList.toggle('light-mode');
+            });
+            document.querySelectorAll('button').forEach(btn => {
+                btn.classList.toggle('light-mode');
+            });
+        });
+    </script>
+</body>
+</html>

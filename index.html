@@ -16,6 +16,7 @@
         <ul>
             <li><a href="#about">Sobre</a></li>
             <li><a href="#projects">Projetos</a></li>
+            <li><a href="#experience">Experiência</a></li>
             <li><a href="#contact">Contato</a></li>
         </ul>
     </nav>
@@ -30,19 +31,32 @@
             <p>Descrição do projeto.</p>
         </div>
     </section>
+    <section id="experience">
+        <h2>Experiência</h2>
+        <div class="experience">
+            <h3>Cargo - Nome da Empresa</h3>
+            <p>17 de setembro de 2022 - Atual</p>
+            <p>Descrição das responsabilidades e conquistas neste cargo.</p>
+        </div>
+    </section>
     <section id="contact">
         <h2>Contato</h2>
         <div class="social-links">
             <a href="mailto:goncalorp1@gmail.com" target="_blank">
                 <img src="gmail.png" alt="Gmail"> goncalorp1@gmail.com
             </a>
-            <a href="https://github.com/sardinhaa" target="_blank">
-                <img src="github.png" alt="GitHub"> @sardinhaa
+            <a href="https://github.com/sardinha" target="_blank">
+                <img src="github.png" alt="GitHub"> sardinha
             </a>
             <a href="https://instagram.com/sardinha_yk" target="_blank">
-                <img src="instagram.png" alt="Instagram"> @sardinha_yk
+                <img src="instagram.png" alt="Instagram"> sardinha_yk
             </a>
         </div>
+        <form>
+            <input type="text" name="name" placeholder="Seu Nome" required>
+            <input type="email" name="email" placeholder="Seu Email" required>
+            <button type="submit">Enviar</button>
+        </form>
     </section>
     
     <style>
@@ -131,9 +145,4 @@
                 link.classList.toggle('light-mode');
             });
             document.querySelectorAll('button').forEach(btn => {
-                btn.classList.toggle('light-mode');
-            });
-        });
-    </script>
-</body>
-</html>
+                btn.classList.toggle('light

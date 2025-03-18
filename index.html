@@ -7,7 +7,7 @@
     <link rel="stylesheet" href="styles.css">
     <script defer src="script.js"></script>
 </head>
-<body>
+<body data-theme="dark">
     <header>
         <h1>Meu Portfólio</h1>
         <button id="toggle-theme">🌙</button>
@@ -53,95 +53,168 @@
             </a>
         </div>
     </section>
-    
+
+    <footer>
+        <div class="footer-scroll">
+            <span>Gonçalo Pereira © 2025 </span>
+            <span>Gonçalo Pereira © 2025 </span>
+            <span>Gonçalo Pereira © 2025 </span>
+            <span>Gonçalo Pereira © 2025 </span>
+            <span>Gonçalo Pereira © 2025 </span>
+            <span>Gonçalo Pereira © 2025 </span>
+        </div>
+    </footer>
+
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Fira+Mono&display=swap');
-        
+
+        :root {
+            --bg-color-dark: #121212;
+            --text-color-dark: #ffffff;
+            --header-bg-dark: #1e1e1e;
+            --section-bg-dark: #1e1e1e;
+
+            --bg-color-light: #ffffff;
+            --text-color-light: #000000;
+            --header-bg-light: #f0f0f0;
+            --section-bg-light: #e0e0e0;
+
+            --bg-color-code: #2e3440; /* Azul */
+            --text-color-code: #ffffff; /* Branco */
+            --header-bg-code: #3b4252; /* Azul mais escuro */
+            --section-bg-code: #434c5e; /* Azul claro */
+            --title-color-code: #b48ead; /* Roxo */
+        }
+
+        [data-theme="dark"] {
+            --bg-color: var(--bg-color-dark);
+            --text-color: var(--text-color-dark);
+            --header-bg: var(--header-bg-dark);
+            --section-bg: var(--section-bg-dark);
+        }
+
+        [data-theme="light"] {
+            --bg-color: var(--bg-color-light);
+            --text-color: var(--text-color-light);
+            --header-bg: var(--header-bg-light);
+            --section-bg: var(--section-bg-light);
+        }
+
+        [data-theme="code"] {
+            --bg-color: var(--bg-color-code);
+            --text-color: var(--text-color-code);
+            --header-bg: var(--header-bg-code);
+            --section-bg: var(--section-bg-code);
+            --title-color: var(--title-color-code);
+        }
+
         body {
-            background-color: #121212;
-            color: #ffffff;
+            background-color: var(--bg-color);
+            color: var(--text-color);
             font-family: 'Fira Mono', monospace;
             transition: background 0.3s, color 0.3s;
         }
+
         header {
             display: flex;
             justify-content: space-between;
             align-items: center;
             padding: 10px;
-            background: #1e1e1e;
+            background: var(--header-bg);
         }
+
         nav ul {
             list-style: none;
             display: flex;
             gap: 15px;
         }
+
         nav a {
-            color: #ffffff;
+            color: var(--text-color);
             text-decoration: none;
         }
+
         button {
             background: none;
             border: none;
-            color: #ffffff;
+            color: var(--text-color);
             font-size: 18px;
             cursor: pointer;
         }
+
         section {
             margin: 20px;
             padding: 20px;
-            background: #1e1e1e;
+            background: var(--section-bg);
             border-radius: 10px;
         }
+
+        section h2 {
+            color: var(--title-color);
+        }
+
         .social-links {
             display: flex;
             flex-direction: column;
             gap: 10px;
             margin-bottom: 20px;
         }
+
         .social-links a {
             display: flex;
             align-items: center;
             gap: 10px;
-            color: #ffffff;
+            color: var(--text-color);
             text-decoration: none;
         }
+
         .social-links img {
             width: 32px;
             height: 32px;
         }
 
-        /* Light theme styles */
-        body.light-mode {
-            background-color: #ffffff;
-            color: #000000;
+        footer {
+            width: 100%;
+            overflow: hidden;
+            background: var(--header-bg);
+            padding: 10px 0;
+            position: relative;
+            text-align: center;
         }
-        header.light-mode {
-            background: #f0f0f0;
+
+        .footer-scroll {
+            display: flex;
+            gap: 50px;
+            white-space: nowrap;
+            animation: scrollText 10s linear infinite;
         }
-        section.light-mode {
-            background: #e0e0e0;
-        }
-        nav a.light-mode {
-            color: #000000;
-        }
-        button.light-mode {
-            color: #000000;
+
+        @keyframes scrollText {
+            from {
+                transform: translateX(100%);
+            }
+            to {
+                transform: translateX(-100%);
+            }
         }
     </style>
-    
+
     <script>
         document.getElementById('toggle-theme').addEventListener('click', () => {
-            document.body.classList.toggle('light-mode');
-            document.querySelector('header').classList.toggle('light-mode');
-            document.querySelectorAll('section').forEach(section => {
-                section.classList.toggle('light-mode');
-            });
-            document.querySelectorAll('nav a').forEach(link => {
-                link.classList.toggle('light-mode');
-            });
-            document.querySelectorAll('button').forEach(btn => {
-                btn.classList.toggle('light-mode');
-            });
+            const body = document.body;
+            const currentTheme = body.getAttribute('data-theme');
+            let newTheme;
+
+            if (currentTheme === 'dark') {
+                newTheme = 'light';
+            } else if (currentTheme === 'light') {
+                newTheme = 'code';
+            } else {
+                newTheme = 'dark';
+            }
+
+            body.setAttribute('data-theme', newTheme);
+            document.getElementById('toggle-theme').textContent = newTheme === 'dark' ? '🌙' : newTheme === 'light' ? '☀️' : '>_';
         });
     </script>
 </body>

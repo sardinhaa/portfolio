@@ -66,8 +66,14 @@
             <a class="dock-button" href="mailto:hello@example.com">Contact</a>
         </nav>
 
-        <div class="theme-container">
-            <div class="theme-btn theme-btn-dark" onclick="setTheme('dark')"></div>
+        <div class="theme-dropdown">
+    <button class="theme-toggle" onclick="toggleThemeMenu()">Themes ▾</button>
+    <div id="themeMenu" class="theme-menu hidden">
+        <div class="theme-btn theme-btn-dark" onclick="setTheme('dark')">Dark</div>
+        <div class="theme-btn theme-btn-light" onclick="setTheme('light')">Light</div>
+        <div class="theme-btn theme-btn-code" onclick="setTheme('code')">Code</div>
+    </div>
+</div>
             <div class="theme-btn theme-btn-light" onclick="setTheme('light')"></div>
             <div class="theme-btn theme-btn-code" onclick="setTheme('code')"></div>
         </div>

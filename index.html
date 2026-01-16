@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gonçalo's Portfolio</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        @import url('style.css');
+    </style>
+</head>
+<body class="theme-dark">
+    <!-- Dither background canvas -->
+    <canvas id="ditherCanvas"></canvas>
+    <!-- Theme selector -->
+<!-- Theme hamburger menu -->
+<div class="theme-menu">
+  <button class="theme-menu-toggle" type="button" aria-label="Theme menu">
+    <span></span>
+    <span></span>
+    <span></span>
+  </button>
+
+  <div class="theme-menu-dropdown">
+    <p>Select Theme:</p>
+    <button type="button" onclick="setTheme('dark')">
+      <span class="theme-swatch theme-swatch-dark"></span>
+    </button>
+    <button type="button" onclick="setTheme('light')">
+      <span class="theme-swatch theme-swatch-light"></span>
+    </button>
+    <button type="button" onclick="setTheme('code')">
+      <span class="theme-swatch theme-swatch-code"></span>
+    </button>
+  </div>
+</div>
+    <!-- Main content -->
+    <div class="content">
+        <div class="card floating mb-10">
+            <h1 class="text-5xl font-bold mb-4">Gonçalo Pereira</h1>
+            <p class="text-xl opacity-80">𝗜𝗧 𝗧𝗲𝗰𝗵𝗻𝗶𝗰𝗶𝗮𝗻</p>
+        </div>
+        
+        <div class="card">
+            <h2 class="text-3xl font-bold mb-4">About Me</h2>
+            <p class="mb-4">I create immersive digital experiences that blend cutting-edge technology with thoughtful design. With 8 years in the industry, I've helped startups and enterprises build products that users love.</p>
+            <p>My approach combines technical precision with creative exploration to deliver solutions that are both functional and delightful.</p>
+        </div>
+        
+        <div class="card">
+            <h2 class="text-3xl font-bold mb-4">My Skills</h2>
+            <div class="grid grid-cols-2 md:grid-cols-3 gap-4">
+                <div class="skill-item">
+                    <h3 class="font-bold mb-2">Front-end</h3>
+                    <p>React, Vue, TypeScript, Three.js</p>
+                </div>
+                <div class="skill-item">
+                    <h3 class="font-bold mb-2">Design</h3>
+                    <p>Figma, UI/UX, Motion Design</p>
+                </div>
+                <div class="skill-item">
+                    <h3 class="font-bold mb-2">Back-end</h3>
+            <p>Node.js, GraphQL, PostgreSQL</p>
+        </div>
+    </div>
+</div>
+<!-- Projects  -->
+
+<div class="card projects-card">
+  <button class="projects-button">
+    Projects
+  </button>
+
+  <div class="projects-grid">
+    <div class="project-item project-1">
+      <h3 class="text-xl font-bold mb-2">Neon Dreams</h3>
+      <p class="mb-3">Interactive audio-visual experience using WebGL and Web Audio API.</p>
+      <span class="project-tag-primary">WebGL</span>
+      <span class="project-tag-secondary">Three.js</span>
+    </div>
+
+    <div class="project-item project-2">
+      <h3 class="text-xl font-bold mb-2">Code Canvas</h3>
+      <p class="mb-3">Real-time collaborative code editor with live preview.</p>
+      <span class="project-tag-primary">React</span>
+      <span class="project-tag-secondary">Firebase</span>
+    </div>
+  </div>
+</div>
+
+
+
+<!-- Dock -->
+<div class="dock">
+    <div class="dock-item" onclick="scrollToSection('about')">
+        <div class="dock-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
+                <circle cx="12" cy="7" r="4"></circle>
+            </svg>
+        </div>
+        <div class="dock-label">About</div>
+    </div>
+    <div class="dock-item" onclick="scrollToSection('skills')">
+        <div class="dock-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"></path>
+            </svg>
+        </div>
+        <div class="dock-label">Skills</div>
+    </div>
+    <div class="dock-item" onclick="scrollToSection('projects')">
+        <div class="dock-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"></path>
+                <polyline points="3.27 6.96 12 12.01 20.73 6.96"></polyline>
+                <line x1="12" y1="22.08" x2="12" y2="12"></line>
+            </svg>
+        </div>
+        <div class="dock-label">Projects</div>
+    </div>
+    <div class="dock-item" onclick="window.open('mailto:goncalorp1+portfolio@gmail.com')">
+        <div class="dock-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
+                <polyline points="22,6 12,13 2,6"></polyline>
+            </svg>
+        </div>
+        <div class="dock-label">Contact</div>
+    </div>
+    <div class="dock-item" onclick="window.open('https://github.com/sardinhaa')">
+        <div class="dock-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path>
+            </svg>
+        </div>
+        <div class="dock-label">GitHub</div>
+    </div>
+    <div class="dock-item" onclick="window.open('https://www.linkedin.com/in/gon%C3%A7alo-pereira-7207761a3/')">
+        <div class="dock-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path>
+                <rect x="2" y="9" width="4" height="12"></rect>
+                <circle cx="4" cy="4" r="2"></circle>
+            </svg>
+        </div>
+        <div class="dock-label">LinkedIn</div>
+    </div>
+</div>
+
+<script src="logic.js"></script>
+</body>
+
+</html>
+
+

@@ -5,17 +5,17 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Projetos - Gonçalo</title>
 
-  <!-- Tailwind (se usares) -->
+  <!-- Tailwind -->
   <script src="https://cdn.tailwindcss.com"></script>
 
-  <!-- O MESMO CSS -->
+  <!-- CSS -->
   <link rel="stylesheet" href="style.css" />
 </head>
 <body class="theme-dark">
-  <!-- MESMO canvas de background -->
+  <!--  canvas  -->
   <canvas id="ditherCanvas"></canvas>
 
-  <!-- Theme hamburger menu -->
+  <!-- Theme menu -->
   <div class="theme-menu">
     <button class="theme-menu-toggle" type="button" aria-label="Theme menu">
       <span></span>
@@ -37,7 +37,7 @@
     </div>
   </div>
 
-  <!-- CONTEÚDO DOS PROJETOS -->
+  <!-- PROJETOS -->
   <div class="content">
     <!-- Header Projetos -->
     <div class="card" id="projects">
@@ -45,7 +45,7 @@
       <p>Aqui vais listar os teus projetos...</p>
     </div>
 
-    <!-- Skills (reaproveitada só como conteúdo extra) -->
+    <!-- Skills -->
     <div class="card" id="skills">
       <h2 class="text-3xl font-bold mb-4">My Skills</h2>
       <div class="grid grid-cols-2 md:grid-cols-3 gap-4">
@@ -67,6 +67,17 @@
 
   <!-- Dock -->
   <div class="dock">
+    <div class="dock-item" onclick="window.location.href='index.html'">
+  <div class="dock-icon">
+    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+         viewBox="0 0 24 24" fill="none" stroke="currentColor"
+         stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M3 9.5L12 3l9 6.5V21a1 1 0 0 1-1 1h-5v-6H9v6H4a1 1 0 0 1-1-1V9.5z"></path>
+    </svg>
+  </div>
+  <div class="dock-label">Home</div>
+</div>
+
     <div class="dock-item" onclick="scrollToSection('about')">
       <div class="dock-icon">
         <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
@@ -90,7 +101,7 @@
       <div class="dock-label">Skills</div>
     </div>
 
-    <div class="dock-item" onclick="scrollToSection('projects')">
+    <div class="dock-item" onclick="window.open('mailto:goncalorp1+portfolio@gmail.com')">
       <div class="dock-icon">
         <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
              viewBox="0 0 24 24" fill="none" stroke="currentColor"
@@ -140,7 +151,7 @@
     </div>
   </div>
 
-  <!-- MESMO JS -->
+  <!-- JS -->
   <script src="logic.js"></script>
 </body>
 </html>

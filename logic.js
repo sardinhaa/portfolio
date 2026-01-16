@@ -124,7 +124,6 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 document.addEventListener('DOMContentLoaded', () => {
   // ... resto do código já existente
-
   // Theme hamburger menu
   const themeMenu = document.querySelector('.theme-menu');
   const themeToggle = themeMenu ? themeMenu.querySelector('.theme-menu-toggle') : null;

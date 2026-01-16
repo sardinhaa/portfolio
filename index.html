@@ -41,29 +41,35 @@
             <p class="text-xl opacity-80">𝗜𝗧 𝗧𝗲𝗰𝗵𝗻𝗶𝗰𝗶𝗮𝗻</p>
         </div>
         
-        <div class="card">
-            <h2 class="text-3xl font-bold mb-4">About Me</h2>
-            <p class="mb-4">I create immersive digital experiences that blend cutting-edge technology with thoughtful design. With 8 years in the industry, I've helped startups and enterprises build products that users love.</p>
-            <p>My approach combines technical precision with creative exploration to deliver solutions that are both functional and delightful.</p>
-        </div>
-        
-        <div class="card">
-            <h2 class="text-3xl font-bold mb-4">My Skills</h2>
-            <div class="grid grid-cols-2 md:grid-cols-3 gap-4">
-                <div class="skill-item">
-                    <h3 class="font-bold mb-2">Front-end</h3>
-                    <p>React, Vue, TypeScript, Three.js</p>
-                </div>
-                <div class="skill-item">
-                    <h3 class="font-bold mb-2">Design</h3>
-                    <p>Figma, UI/UX, Motion Design</p>
-                </div>
-                <div class="skill-item">
-                    <h3 class="font-bold mb-2">Back-end</h3>
-            <p>Node.js, GraphQL, PostgreSQL</p>
-        </div>
-    </div>
+    <!-- About (versão resumida, página completa em about.html) -->
+<div class="card cursor-pointer" onclick="window.location.href='about.html'">
+  <h2 class="text-3xl font-bold mb-4">About Me</h2>
+  <p class="mb-4">
+    Originally from São Miguel, Azores, my journey in technology began with a deep interest in how systems connect. 
+    I laid my foundation at the Escola de Novas Tecnologias dos Açores, 
+    earning a Level 4 certification in Network Installation and Management...
+  </p>
 </div>
+
+
+    <!-- Skills (versão resumida, página completa em skills.html) -->
+    <div class="card cursor-pointer" onclick="window.location.href='skills.html'">
+      <h2 class="text-3xl font-bold mb-4">My Skills</h2>
+      <div class="grid grid-cols-2 md:grid-cols-3 gap-4">
+        <div class="skill-item">
+          <h3 class="font-bold mb-2">Front-end</h3>
+          <p>React, Vue, TypeScript, Three.js</p>
+        </div>
+        <div class="skill-item">
+          <h3 class="font-bold mb-2">Design</h3>
+          <p>Figma, UI/UX, Motion Design</p>
+        </div>
+        <div class="skill-item">
+          <h3 class="font-bold mb-2">Back-end</h3>
+          <p>Node.js, GraphQL, PostgreSQL</p>
+        </div>
+      </div>
+    </div>
 <!-- Projects  -->
 
 <div class="card projects-card">
@@ -72,14 +78,14 @@
   </button>
 
   <div class="projects-grid">
-    <div class="project-item project-1">
+    <div class="project-item">
       <h3 class="text-xl font-bold mb-2">Neon Dreams</h3>
       <p class="mb-3">Interactive audio-visual experience using WebGL and Web Audio API.</p>
       <span class="project-tag-primary">WebGL</span>
       <span class="project-tag-secondary">Three.js</span>
     </div>
 
-    <div class="project-item project-2">
+    <div class="project-item">
       <h3 class="text-xl font-bold mb-2">Code Canvas</h3>
       <p class="mb-3">Real-time collaborative code editor with live preview.</p>
       <span class="project-tag-primary">React</span>

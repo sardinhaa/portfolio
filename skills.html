@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Skills</title>
+
+  <!-- Tailwind -->
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body class="theme-dark">
+  <!--  canvas  -->
+  <canvas id="ditherCanvas"></canvas>
+
+  <!-- Theme menu -->
+  <div class="theme-menu">
+    <button class="theme-menu-toggle" type="button" aria-label="Theme menu">
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
+
+    <div class="theme-menu-dropdown">
+      <p>Select Theme:</p>
+      <button type="button" onclick="setTheme('dark')">
+        <span class="theme-swatch theme-swatch-dark"></span>
+      </button>
+      <button type="button" onclick="setTheme('light')">
+        <span class="theme-swatch theme-swatch-light"></span>
+      </button>
+      <button type="button" onclick="setTheme('code')">
+        <span class="theme-swatch theme-swatch-code"></span>
+      </button>
+    </div>
+  </div>
+
+  <!-- PROJETOS -->
+  <div class="content">
+    <!-- Header Projetos -->
+    <div class="card" id="projects">
+      <h1 class="text-4xl font-bold mb-4">Projetos</h1>
+      <p>Aqui vais listar os teus projetos...</p>
+    </div>
+
+    <!-- Skills -->
+    <div class="card" id="skills">
+      <h2 class="text-3xl font-bold mb-4">My Skills</h2>
+      <div class="grid grid-cols-2 md:grid-cols-3 gap-4">
+        <div class="skill-item">
+          <h3 class="font-bold mb-2">Front-end</h3>
+          <p>React, Vue, TypeScript, Three.js</p>
+        </div>
+        <div class="skill-item">
+          <h3 class="font-bold mb-2">Design</h3>
+          <p>Figma, UI/UX, Motion Design</p>
+        </div>
+        <div class="skill-item">
+          <h3 class="font-bold mb-2">Back-end</h3>
+          <p>Node.js, GraphQL, PostgreSQL</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Dock -->
+  <div class="dock">
+    <div class="dock-item" onclick="window.location.href='index.html'">
+  <div class="dock-icon">
+    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+         viewBox="0 0 24 24" fill="none" stroke="currentColor"
+         stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M3 9.5L12 3l9 6.5V21a1 1 0 0 1-1 1h-5v-6H9v6H4a1 1 0 0 1-1-1V9.5z"></path>
+    </svg>
+  </div>
+  <div class="dock-label">Home</div>
+</div>
+
+    <div class="dock-item" onclick="scrollToSection('about')">
+      <div class="dock-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+             viewBox="0 0 24 24" fill="none" stroke="currentColor"
+             stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
+          <circle cx="12" cy="7" r="4"></circle>
+        </svg>
+      </div>
+      <div class="dock-label">About</div>
+    </div>
+
+    <div class="dock-item" onclick="scrollToSection('skills')">
+      <div class="dock-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+             viewBox="0 0 24 24" fill="none" stroke="currentColor"
+             stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"></path>
+        </svg>
+      </div>
+      <div class="dock-label">Skills</div>
+    </div>
+
+    <div class="dock-item" onclick="window.open('mailto:goncalorp1+portfolio@gmail.com')">
+      <div class="dock-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+             viewBox="0 0 24 24" fill="none" stroke="currentColor"
+             stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"></path>
+          <polyline points="3.27 6.96 12 12.01 20.73 6.96"></polyline>
+          <line x1="12" y1="22.08" x2="12" y2="12"></line>
+        </svg>
+      </div>
+      <div class="dock-label">Projects</div>
+    </div>
+
+    <div class="dock-item" onclick="window.open('mailto:goncalorp1+portfolio@gmail.com')">
+      <div class="dock-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+             viewBox="0 0 24 24" fill="none" stroke="currentColor"
+             stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
+          <polyline points="22,6 12,13 2,6"></polyline>
+        </svg>
+      </div>
+      <div class="dock-label">Contact</div>
+    </div>
+
+    <div class="dock-item" onclick="window.open('https://github.com/sardinhaa')">
+      <div class="dock-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+             viewBox="0 0 24 24" fill="none" stroke="currentColor"
+             stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path>
+        </svg>
+      </div>
+      <div class="dock-label">GitHub</div>
+    </div>
+
+    <div class="dock-item" onclick="window.open('https://www.linkedin.com/in/gon%C3%A7alo-pereira-7207761a3/')">
+      <div class="dock-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+             viewBox="0 0 24 24" fill="none" stroke="currentColor"
+             stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path>
+          <rect x="2" y="9" width="4" height="12"></rect>
+          <circle cx="4" cy="4" r="2"></circle>
+        </svg>
+      </div>
+      <div class="dock-label">LinkedIn</div>
+    </div>
+  </div>
+
+  <!-- JS -->
+  <script src="logic.js"></script>
+</body>
+</html>

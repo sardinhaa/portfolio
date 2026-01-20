@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Projetos - Gonçalo</title>
+  <title>About Me</title>
 
   <!-- Tailwind -->
   <script src="https://cdn.tailwindcss.com"></script>
@@ -12,7 +12,7 @@
   <link rel="stylesheet" href="style.css" />
 </head>
 <body class="theme-dark">
-  <!--  canvas  -->
+  <!-- Dither background canvas -->
   <canvas id="ditherCanvas"></canvas>
 
   <!-- Theme menu -->
@@ -37,49 +37,79 @@
     </div>
   </div>
 
-  <!-- PROJETOS -->
+  <!-- Main content -->
   <div class="content">
-    <!-- Header Projetos -->
-    <div class="card" id="projects">
-      <h1 class="text-4xl font-bold mb-4">Projetos</h1>
-      <p>Aqui vais listar os teus projetos...</p>
+    <!-- Header -->
+    <div class="card">
+      <h1 class="text-4xl font-bold mb-4">Servidor Web de Acesso remoto com Docker
+</h1>
     </div>
 
-<div class="card cursor-pointer" onclick="window.location.href='web.html'">
-  <h2 class="text-3xl font-bold mb-4">Servidor Web de Acesso remoto com Docker</h2>
-  <p class="mb-4">
-  toca para mais informacoes!
-        <div class="grid grid-cols-2 md:grid-cols-3 gap-4">
+    <!-- Personal life -->
+    <div class="card" id="about">
+      <h2 class="text-3xl font-bold mb-4">Contexto:</h2>
+      <p class="mb-4">
+        No âmbito da minha formação em Gestão de Redes, realizei a minha Prova de Aptidão Profissional onde
+        desenvolvi uma infraestrutura de acesso remoto centralizada que une Docker, AWS e Cibersegurança. 
+        O objetivo foi criar um portal web seguro para gerir dispositivos via SSH, RDP, VNC e Kubernetes.
+      </p>
+    </div>
+
+    <!-- Education -->
+    <div class="card">
+      <h2 class="text-3xl font-bold mb-4">Tecnologias Utilizadas:</h2>
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
         <div class="skill-item">
-          <h3 class="font-bold mb-2">Front-end</h3>
-          <p>React, Vue, TypeScript, Three.js</p>
+          <h3 class="font-bold mb-2">Docker</h3>
+          <p>Deployment de containers e servicos</p>
         </div>
         <div class="skill-item">
-          <h3 class="font-bold mb-2">Design</h3>
-          <p>Figma, UI/UX, Motion Design</p>
+          <h3 class="font-bold mb-2">AWS</h3>
+          <p>Deployment de máquinas virtuais em nuvem</p>
         </div>
         <div class="skill-item">
-          <h3 class="font-bold mb-2">Back-end</h3>
-          <p>Node.js, GraphQL, PostgreSQL</p>
+          <h3 class="font-bold mb-2">Linux</h3>
+          <p>ambiente de desenvolvimento e administração de sistemas</p>
+        </div>
+        <div class="skill-item">
+          <h3 class="font-bold mb-2">CloudFlare</h3>
+          <p>gestor de tuneis, utilizado tambem paragestao de acessos</p>
         </div>
       </div>
-  </p>
-</div>
+    </div>
+
+    <!-- Professional life -->
+    <div class="card">
+      <h2 class="text-3xl font-bold mb-4">Professional</h2>
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+        <div class="skill-item">
+          <h3 class="font-bold mb-2">IT Helpdesk</h3>
+          <p>Experience in troubleshooting, user support and systems maintenance.</p>
+        </div>
+        <div class="skill-item">
+          <h3 class="font-bold mb-2">Developer Path</h3>
+          <p>Focusing on building and designing systems from the ground up.</p>
+        </div>
+      </div>
+    </div>
+  </div>
 
   <!-- Dock -->
   <div class="dock">
+    <!-- Home -->
     <div class="dock-item" onclick="window.location.href='index.html'">
-  <div class="dock-icon">
-    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
-         viewBox="0 0 24 24" fill="none" stroke="currentColor"
-         stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-      <path d="M3 9.5L12 3l9 6.5V21a1 1 0 0 1-1 1h-5v-6H9v6H4a1 1 0 0 1-1-1V9.5z"></path>
-    </svg>
-  </div>
-  <div class="dock-label">Home</div>
-</div>
+      <div class="dock-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+             viewBox="0 0 24 24" fill="none" stroke="currentColor"
+             stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M3 9.5L12 3l9 6.5V21a1 1 0 0 1-1 1h-5v-6H9v6H4a1 1 0 0 1-1-1V9.5z"></path>
+        </svg>
+      </div>
+      <div class="dock-label">Home</div>
+    </div>
 
-    <div class="dock-item" onclick="scrollToSection('about')">
+    <!-- About (esta página) -->
+    <div class="dock-item" onclick="window.location.href='about.html'">
       <div class="dock-icon">
         <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
              viewBox="0 0 24 24" fill="none" stroke="currentColor"
@@ -91,7 +121,8 @@
       <div class="dock-label">About</div>
     </div>
 
-    <div class="dock-item" onclick="scrollToSection('skills')">
+    <!-- Skills -->
+    <div class="dock-item" onclick="window.location.href='skills.html'">
       <div class="dock-icon">
         <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
              viewBox="0 0 24 24" fill="none" stroke="currentColor"
@@ -102,7 +133,8 @@
       <div class="dock-label">Skills</div>
     </div>
 
-    <div class="dock-item" onclick="window.open('mailto:goncalorp1+portfolio@gmail.com')">
+    <!-- Projects -->
+    <div class="dock-item" onclick="window.location.href='projects.html'">
       <div class="dock-icon">
         <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
              viewBox="0 0 24 24" fill="none" stroke="currentColor"
@@ -115,6 +147,7 @@
       <div class="dock-label">Projects</div>
     </div>
 
+    <!-- Contact -->
     <div class="dock-item" onclick="window.open('mailto:goncalorp1+portfolio@gmail.com')">
       <div class="dock-icon">
         <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
@@ -127,23 +160,33 @@
       <div class="dock-label">Contact</div>
     </div>
 
+    <!-- GitHub -->
     <div class="dock-item" onclick="window.open('https://github.com/sardinhaa')">
       <div class="dock-icon">
         <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
              viewBox="0 0 24 24" fill="none" stroke="currentColor"
              stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-          <path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path>
+          <path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61
+                   c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77
+                   5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48
+                   a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1
+                   A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78
+                   c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22">
+          </path>
         </svg>
       </div>
       <div class="dock-label">GitHub</div>
     </div>
 
+    <!-- LinkedIn -->
     <div class="dock-item" onclick="window.open('https://www.linkedin.com/in/gon%C3%A7alo-pereira-7207761a3/')">
       <div class="dock-icon">
         <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
              viewBox="0 0 24 24" fill="none" stroke="currentColor"
              stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-          <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path>
+          <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2
+                   2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z">
+          </path>
           <rect x="2" y="9" width="4" height="12"></rect>
           <circle cx="4" cy="4" r="2"></circle>
         </svg>
